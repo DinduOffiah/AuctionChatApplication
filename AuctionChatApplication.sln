@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionChatApp.API", "AuctionChatApp.API\AuctionChatApp.API.csproj", "{032DD9EC-3A3C-404F-A6FE-D91530456C25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionChatApp.Core", "AuctionChatApp.Core\AuctionChatApp.Core.csproj", "{44E7EC18-A2F8-44A0-B047-8AA212E06598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionChatApp.DAL", "AuctionChatApp.DAL\AuctionChatApp.DAL.csproj", "{F5135833-FF0D-4F67-8D09-576B4DD494B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{032DD9EC-3A3C-404F-A6FE-D91530456C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032DD9EC-3A3C-404F-A6FE-D91530456C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032DD9EC-3A3C-404F-A6FE-D91530456C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032DD9EC-3A3C-404F-A6FE-D91530456C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E7EC18-A2F8-44A0-B047-8AA212E06598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E7EC18-A2F8-44A0-B047-8AA212E06598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E7EC18-A2F8-44A0-B047-8AA212E06598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E7EC18-A2F8-44A0-B047-8AA212E06598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5135833-FF0D-4F67-8D09-576B4DD494B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5135833-FF0D-4F67-8D09-576B4DD494B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5135833-FF0D-4F67-8D09-576B4DD494B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5135833-FF0D-4F67-8D09-576B4DD494B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB687A39-2BC3-41FF-9D06-F61F76F9DA08}
+	EndGlobalSection
+EndGlobal
