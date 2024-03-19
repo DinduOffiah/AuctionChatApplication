@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\AuctionChatApp.DAL\AuctionChatApp.DAL.csproj" />
   </ItemGroup>
 
 </Project>

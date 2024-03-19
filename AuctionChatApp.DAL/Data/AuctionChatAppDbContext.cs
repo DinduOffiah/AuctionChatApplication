@@ -14,5 +14,12 @@ namespace AuctionChatApp.DAL.Data
         public DbSet<Bid> Bids { get; set; }
         public DbSet<AuctionItem> Invoices { get; set; }
         public DbSet<User> Users { get; set; }
+
+        //For correctly mapping "Decimal" data type to the corresponding column in the database.
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Bid>().Property(b => b.Amount).HasPrecision(10, 2);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
