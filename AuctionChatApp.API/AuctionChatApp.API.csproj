@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AuctionChatApp.Core\AuctionChatApp.Core.csproj" />
+    <ProjectReference Include="..\AuctionChatApp.DAL\AuctionChatApp.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
