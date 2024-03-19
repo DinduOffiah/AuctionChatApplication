@@ -19,7 +19,7 @@ namespace AuctionChatApp.DAL.Models
         public User? User { get; set; }
 
         // Foreign key for AuctionItem
-        public string? ItemId { get; set; }
+        public int ItemId { get; set; }
         // Navigation property for AuctionItem
         public AuctionItem? Item { get; set; }
     }

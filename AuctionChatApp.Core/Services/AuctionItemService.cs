@@ -38,6 +38,7 @@ namespace AuctionChatApp.Core.Services
 
         public async Task UpdateItemAsync(AuctionItem auctionItem)
         {
+            auctionItem.Quantity = auctionItem.Quantity != 0 ? auctionItem.Quantity : 1;
             _context.Entry(auctionItem).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
