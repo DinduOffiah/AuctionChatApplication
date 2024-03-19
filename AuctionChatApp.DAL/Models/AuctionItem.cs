@@ -9,7 +9,7 @@ namespace AuctionChatApp.DAL.Models
     public class AuctionItem
     {
         public int Id { get; set; }
-        public string? ItemId { get; set; }
+        public string? ItemUniqueNumber { get; set; }
         public string? ItemName { get; set; }
         public string? Description { get; set; }
         public int Quantity { get; set; }
