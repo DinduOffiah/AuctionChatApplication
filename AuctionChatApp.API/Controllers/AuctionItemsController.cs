@@ -45,6 +45,7 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = e.ItemName,
                     Description = e.Description,
                     Quantity = e.Quantity,
+                    IsAvailableForAuction = e.IsAvailableForAuction,
                 }).ToList();
 
                 return Ok(itemDtos);
@@ -78,6 +79,7 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = item.ItemName,
                     Description = item.Description,
                     Quantity = item.Quantity,
+                    IsAvailableForAuction = item.IsAvailableForAuction,
                 };
 
                 return Ok(itemDto);
@@ -102,6 +104,7 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = itemDto.ItemName,
                     Description = itemDto.Description,
                     Quantity = itemDto.Quantity,
+                    IsAvailableForAuction= itemDto.IsAvailableForAuction,
                 };
 
                 var newItem = await _service.CreateItemAsync(item);
@@ -117,6 +120,7 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = newItem.ItemName,
                     Description = newItem.Description,
                     Quantity = newItem.Quantity,
+                    IsAvailableForAuction = newItem.IsAvailableForAuction,
                 };
 
                 return CreatedAtAction(nameof(GetItem), new { id = newItem.Id }, newItemDto);

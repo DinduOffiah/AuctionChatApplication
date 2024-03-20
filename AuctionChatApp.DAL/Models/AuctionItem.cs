@@ -13,6 +13,7 @@ namespace AuctionChatApp.DAL.Models
         public string? ItemName { get; set; }
         public string? Description { get; set; }
         public int Quantity { get; set; }
+        public bool IsAvailableForAuction { get; set; }
         public DateTime? CreatedDate { get; set; } = DateTime.Now;
         public DateTime? LastModifiedDate { get; set; } = DateTime.Now;
         public bool? IsDeleted { get; set; } = false;
