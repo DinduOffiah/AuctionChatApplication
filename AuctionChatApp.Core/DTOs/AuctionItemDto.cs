@@ -12,7 +12,8 @@ namespace AuctionChatApp.Core.DTOs
         public string? ItemName { get; set; }
         public string? Description { get; set; }
         public int Quantity { get; set; }
-        public bool IsAvailableForAuction { get; set; }
+        public bool IsAvailableForAuction { get; set; } = true;
+        public DateTime? StopTime { get; set; }
     }
 
     // DTO for reading an item
@@ -23,5 +24,6 @@ namespace AuctionChatApp.Core.DTOs
         public int Quantity { get; set; }
         public string? ItemUniqueNumber { get; set; }
         public bool IsAvailableForAuction { get; set; }
+        public DateTime? StopTime { get; set; }
     }
 }

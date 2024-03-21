@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuctionChatApp.DAL.Models
+namespace AuctionChatApp.Core.DTOs
 {
-    public class Bid
+    public class InvoiceDto
     {
-        public int Id { get; set; }
+        public string? RefNumber { get; set; }
         public decimal Amount { get; set; }
-        public string? ItemUniqueNumber { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
     }
 }

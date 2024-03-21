@@ -46,6 +46,7 @@ namespace AuctionChatApp.API.Controllers
                     Description = e.Description,
                     Quantity = e.Quantity,
                     IsAvailableForAuction = e.IsAvailableForAuction,
+                    StopTime = e.StopTime,
                 }).ToList();
 
                 return Ok(itemDtos);
@@ -80,6 +81,7 @@ namespace AuctionChatApp.API.Controllers
                     Description = item.Description,
                     Quantity = item.Quantity,
                     IsAvailableForAuction = item.IsAvailableForAuction,
+                    StopTime = item.StopTime,
                 };
 
                 return Ok(itemDto);
@@ -104,7 +106,8 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = itemDto.ItemName,
                     Description = itemDto.Description,
                     Quantity = itemDto.Quantity,
-                    IsAvailableForAuction= itemDto.IsAvailableForAuction,
+                    IsAvailableForAuction = itemDto.IsAvailableForAuction,
+                    StopTime = itemDto.StopTime,
                 };
 
                 var newItem = await _service.CreateItemAsync(item);
@@ -121,6 +124,7 @@ namespace AuctionChatApp.API.Controllers
                     Description = newItem.Description,
                     Quantity = newItem.Quantity,
                     IsAvailableForAuction = newItem.IsAvailableForAuction,
+                    StopTime = newItem.StopTime,
                 };
 
                 return CreatedAtAction(nameof(GetItem), new { id = newItem.Id }, newItemDto);
@@ -157,7 +161,8 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = item.ItemName,
                     Description = item.Description,
                     Quantity = item.Quantity,
-                    ItemUniqueNumber = item.ItemUniqueNumber
+                    ItemUniqueNumber = item.ItemUniqueNumber,
+                    StopTime = item.StopTime,
                 };
 
                 return Ok(updatedItemDto);
@@ -189,6 +194,7 @@ namespace AuctionChatApp.API.Controllers
                     ItemName = itemToDelete.ItemName,
                     Description = itemToDelete.Description,
                     Quantity = itemToDelete.Quantity,
+                    StopTime = itemToDelete.StopTime,
                 };
 
                 await _service.DeleteItemAsync(id);
