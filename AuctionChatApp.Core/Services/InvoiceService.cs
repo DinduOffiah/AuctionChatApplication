@@ -1,5 +1,7 @@
 ﻿using AuctionChatApp.Core.DTOs;
 using AuctionChatApp.Core.Interfaces;
+using AuctionChatApp.DAL.Data;
+using Microsoft.EntityFrameworkCore;
 using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
@@ -9,13 +11,18 @@ using System.Threading.Tasks;
 
 namespace AuctionChatApp.Core.Services
 {
-    internal class InvoiceService : IInvoiceService
+    public class InvoiceService : IInvoiceService
     {
-        private readonly IRoomService _roomService;
+        private readonly AuctionChatAppDbContext _context;
+
+        public InvoiceService(AuctionChatAppDbContext context)
+        {
+            _context = context;
+        }
 
         public async Task<InvoiceDto> GetInvoiceAsync()
         {
-            var highestBid = await _roomService.GetHighestBidAsync();
+            var highestBid = await _context.Bids.OrderByDescending(bid => bid.Amount).FirstOrDefaultAsync();
 
             if (highestBid == null)
             {
