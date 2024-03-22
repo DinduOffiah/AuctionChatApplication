@@ -3,6 +3,8 @@ using AuctionChatApp.Core.Interfaces;
 using AuctionChatApp.DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RabbitMQ.Client;
+using System.Text;
 
 namespace AuctionChatApp.API.Controllers
 {
@@ -51,6 +53,26 @@ namespace AuctionChatApp.API.Controllers
                 };
 
                 var createdBid = await _biddingService.MakeBidAsync(bid);
+
+                // Publish message to RabbitMQ
+                var factory = new ConnectionFactory() { HostName = "localhost" };
+                using (var connection = factory.CreateConnection())
+                using (var channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare(queue: "notificationQueue",
+                                         durable: false,
+                                         exclusive: false,
+                                         autoDelete: false,
+                                         arguments: null);
+
+                    string message = $"New bid of {bid.Amount} for item {item.ItemUniqueNumber}";
+                    var body = Encoding.UTF8.GetBytes(message);
+
+                    channel.BasicPublish(exchange: "",
+                                         routingKey: "notificationQueue",
+                                         basicProperties: null,
+                                         body: body);
+                }
 
                 return CreatedAtAction(nameof(SubmitBid), new { id = createdBid.Id }, createdBid);
             }

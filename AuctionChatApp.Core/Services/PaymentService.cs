@@ -18,11 +18,6 @@ namespace AuctionChatApp.Core.Services
         {
             _context = context;
         }
-        public async Task<Bid> GetHighestBidderAsync()
-        {
-            //TODO: This should get the Username as well.
-            return await _context.Bids.OrderByDescending(bid => bid.Amount).FirstOrDefaultAsync();
-        }
 
         public async Task MakePaymentAsync()
         {

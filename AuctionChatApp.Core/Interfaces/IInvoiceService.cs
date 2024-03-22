@@ -1,4 +1,4 @@
-﻿using AuctionChatApp.DAL.Models;
+﻿using AuctionChatApp.Core.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace AuctionChatApp.Core.Interfaces
 {
-    public interface IPaymentService
+    public interface IInvoiceService
     {
-        Task MakePaymentAsync();
+        Task<InvoiceDto> GetInvoiceAsync();
     }
 }

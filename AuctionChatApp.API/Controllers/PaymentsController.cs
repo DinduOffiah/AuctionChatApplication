@@ -29,11 +29,11 @@ namespace AuctionChatApp.API.Controllers
         /// This endpoint CREATES auction items.
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<PaymentDto>> Pay(PaymentDto itemDto)
+        public async Task<ActionResult<InvoiceDto>> Pay(InvoiceDto invoiceDto)
         {
             try
             {
-                return StatusCode(201, "Payment Successful");
+                return StatusCode(200, "Payment Successful");
             }
             catch (Exception ex)
             {

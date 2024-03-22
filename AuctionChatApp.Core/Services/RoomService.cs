@@ -30,7 +30,28 @@ namespace AuctionChatApp.Core.Services
 
             item.IsAvailableForAuction = false;
             await _context.SaveChangesAsync();
+
+            // Publish message to RabbitMQ
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: "invoiceQueue",
+                                     durable: false,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+
+                string message = $"Auction ended for item {item.ItemUniqueNumber}";
+                var body = Encoding.UTF8.GetBytes(message);
+
+                channel.BasicPublish(exchange: "",
+                                     routingKey: "invoiceQueue",
+                                     basicProperties: null,
+                                     body: body);
+            }
         }
+
 
         public async Task<IEnumerable<AuctionItem>> GetAuctionedItemsAsync()
         {
