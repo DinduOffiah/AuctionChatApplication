@@ -46,3 +46,11 @@ The code currently uses RabbitMQ for communication between services:
 - Enhance error handling to provide more specific user feedback.
 - Consider user authentication and authorization for secure access to functionalities.
 - Explore implementing a real-time chat feature for auction rooms (using WebSockets or SignalR).
+
+## Setup and Running the Project
+Here are the steps to set up and run the project:
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the necessary dependencies.
+4. Run the project using the appropriate command for your environment.
