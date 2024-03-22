@@ -17,7 +17,7 @@ namespace AuctionChatApp.Core.Services
 
         public RoomService(AuctionChatAppDbContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         public async Task StopAuctionAsync(string itemUniqueNumber)

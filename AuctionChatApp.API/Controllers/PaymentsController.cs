@@ -47,7 +47,6 @@ namespace AuctionChatApp.API.Controllers
         //}
 
 
-
         /// <summary>
         /// This endpoint PAYs for item as highest bidder.
         /// </summary>
