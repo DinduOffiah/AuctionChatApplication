@@ -34,9 +34,9 @@ namespace AuctionChatApp.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task<SignInResult> LoginUser(LoginModel model)
+        public async Task<SignInResult> LoginUser(LoginModel model)
         {
-            throw new NotImplementedException();
+            return await _signInManager.PasswordSignInAsync(model.Username, model.Password, isPersistent: false, lockoutOnFailure: false);
         }
 
         public async Task<IdentityResult> RegisterUser(RegisterModel model)
