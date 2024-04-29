@@ -15,6 +15,9 @@ namespace AuctionChatApp.API.Controllers
             _accountService = accountService;
         }
 
+        /// <summary>
+        /// User registration
+        /// </summary>
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterModel model)
         {
@@ -28,6 +31,9 @@ namespace AuctionChatApp.API.Controllers
             return BadRequest(result.Errors);
         }
 
+        /// <summary>
+        /// User login
+        /// </summary>
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginModel model)
         {
