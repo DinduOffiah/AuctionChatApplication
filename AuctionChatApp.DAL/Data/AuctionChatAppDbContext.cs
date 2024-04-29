@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AuctionChatApp.DAL.Data
 {
-    public class AuctionChatAppDbContext : DbContext
+    public class AuctionChatAppDbContext : IdentityDbContext<User>
     {
         public AuctionChatAppDbContext(DbContextOptions<AuctionChatAppDbContext> options)
           : base(options)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionChatApp.DAL.Models
 {
-    public class AuctionItem
+    public class AuctionItem : BaseEntity
     {
         public int Id { get; set; }
         public string? ItemUniqueNumber { get; set; }
@@ -15,8 +15,5 @@ namespace AuctionChatApp.DAL.Models
         public int Quantity { get; set; }
         public bool IsAvailableForAuction { get; set; }
         public DateTime? StopTime { get; set; }
-        public DateTime? CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? LastModifiedDate { get; set; } = DateTime.Now;
-        public bool? IsDeleted { get; set; } = false;
     }
 }

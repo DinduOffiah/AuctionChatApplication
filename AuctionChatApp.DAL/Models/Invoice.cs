@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace AuctionChatApp.DAL.Models
 {
-    public class Invoice
+    public class Invoice : BaseEntity
     {
         public int Id { get; set; }
         public string? RefNumber { get; set; }
         public decimal Amount { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
-        public bool IsDeleted { get; set; } = false;
 
         // Foreign key for User
         public int UserId { get; set; }
