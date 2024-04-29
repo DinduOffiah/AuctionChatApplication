@@ -19,6 +19,7 @@ builder.Services.AddScoped<IAuctionItem, AuctionItemService>();
 builder.Services.AddScoped<IBiddingService, BiddingService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<IAuthentication,  AuthenticationService>();
 
 // Configure the database context and connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
