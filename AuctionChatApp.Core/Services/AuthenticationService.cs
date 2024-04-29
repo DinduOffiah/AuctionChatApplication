@@ -2,6 +2,7 @@
 using AuctionChatApp.Core.Interfaces;
 using AuctionChatApp.DAL.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -79,6 +80,11 @@ namespace AuctionChatApp.Core.Services
             }
 
             return result;
+        }
+
+        public async Task<User> GetUserByUsername(string username)
+        {
+            return await _userManager.Users.SingleOrDefaultAsync(r => r.UserName == username);
         }
     }
 }

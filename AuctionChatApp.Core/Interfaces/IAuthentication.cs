@@ -15,5 +15,6 @@ namespace AuctionChatApp.Core.Interfaces
         Task<SignInResult> LoginUser(LoginModel model);
         Task<IdentityResult> AssignAdmin(string userId);
         string GenerateJwtToken(User user);
+        Task<User> GetUserByUsername(string username);
     }
 }
