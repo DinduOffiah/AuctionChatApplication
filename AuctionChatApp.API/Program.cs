@@ -99,6 +99,15 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+//Seed database with roles.
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    DatabaseInitializer.InitializeAsync(userManager, roleManager).Wait();
+}
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
