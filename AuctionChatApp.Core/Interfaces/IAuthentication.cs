@@ -1,4 +1,5 @@
-﻿using AuctionChatApp.DAL.Models;
+﻿using AuctionChatApp.Core.DTOs;
+using AuctionChatApp.DAL.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
