@@ -2,6 +2,7 @@ using AuctionChatApp.Core.Interfaces;
 using AuctionChatApp.Core.Services;
 using AuctionChatApp.DAL.Data;
 using AuctionChatApp.DAL.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,14 @@ builder.Services.AddScoped<IPaymentService, PaymentService>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AuctionChatAppDbContext>(options => options.UseSqlServer(connectionString, x => x.MigrationsAssembly("AuctionChatApp.DAL")).EnableDetailedErrors(true));
 
+//Add identity service
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<AuctionChatAppDbContext>();
+
 builder.Services.AddControllers();
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
